@@ -22,7 +22,9 @@ Route::get('/', function () {
 Route::get('/home',[HomeController::class,'index'])->name('home');
 
 Route::get('/test/{id}/{name}',[\App\Http\Controllers\HomeController::class,'test'])->whereNumber('id')->whereAlpha('name')->name('test');
-
+Route::middleware('auth')->prefix('admin')->group(function(){
+    Route::get('/', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_home');
+});
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
