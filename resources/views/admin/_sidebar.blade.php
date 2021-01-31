@@ -20,7 +20,8 @@
                     </ul>
                 </li>
                 <li class="nav-small-cap">--- PERSONAL</li>
-                <li><a class=" waves-effect waves-dark" href="" aria-expanded="false">Categoriler</a>
+
+                <li> <a class=" waves-effect waves-dark" href="{{ route('admin_category') }}" aria-expanded="false">Categoriler</a>
 
                 </li>
 
