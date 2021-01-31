@@ -349,12 +349,11 @@
                             <!-- text-->
                             <a href="javascript:void(0)" class="dropdown-item"><i class="ti-settings"></i> Account
                                 Setting</a>
-
-                                <a class="dropdown-item"><i
-                                        class="fa fa-power-off"></i> Logout</a>
+                            @auth
+                                <a href="{{route('admin_logout')}}" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a>
+                            @endauth
 
                             <div class="dropdown-divider"></div>
-                            <!-- text-->
 
                             <!-- text-->
                         </div>
