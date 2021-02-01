@@ -25,7 +25,7 @@
 
                 </li>
 
-                <li><a class=" waves-effect waves-dark" href="" aria-expanded="false">Products</a>
+                <li><a class=" waves-effect waves-dark" href="{{ route('admin_products') }}" aria-expanded="false">Products</a>
 
                 </li>
 
