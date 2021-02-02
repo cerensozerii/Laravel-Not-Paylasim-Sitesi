@@ -56,8 +56,12 @@ class ProductController extends Controller
         $data->category_id = $request->input('category_id');
         $data->user_id = Auth::id();
         $data->detail = $request->input('detail');
-        $data->image = Storage::putFile('images', $request->file('image'));
-        $data->files = Storage::putFile('files', $request->file('files'));
+        if ($request->file('image')!=null){
+            $data->image= Storage::putFile('images', $request->file('image'));
+        }
+        if ($request->file('files')!=null){
+            $data->files= Storage::putFile('files', $request->file('files'));
+        }
         $data->save();
         return redirect()->route('admin_products');
     }
@@ -111,8 +115,12 @@ class ProductController extends Controller
         $data->category_id = $request->input('category_id');
         $data->user_id = Auth::id();
         $data->detail = $request->input('detail');
-        $data->image = Storage::putFile('images', $request->file('image'));
-        $data->files = Storage::putFile('files', $request->file('files'));
+        if ($request->file('image')!=null){
+            $data->image= Storage::putFile('images', $request->file('image'));
+        }
+        if ($request->file('files')!=null){
+            $data->files= Storage::putFile('files', $request->file('files'));
+        }
         $data->save();
         return redirect()->route('admin_products');
     }

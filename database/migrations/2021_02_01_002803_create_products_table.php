@@ -18,10 +18,10 @@ class CreateProductsTable extends Migration
             $table->string('title',150);
             $table->string('keywords')->nullable();
             $table->string('description')->nullable();
-            $table->string('category_id')->nullable();
+            $table->integer('category_id')->nullable();
             $table->string('status',5)->nullable()->default('False');
             $table->string('slug',100)->nullable();
-            $table->string('user_id')->nullable()->default('False');
+            $table->integer('user_id')->nullable()->default('False');
             $table->string('lectures')->nullable();
             $table->string('subject')->nullable();
             $table->integer('grade')->nullable();
