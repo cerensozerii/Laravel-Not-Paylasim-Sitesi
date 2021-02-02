@@ -35,7 +35,7 @@
                 </div>
                 <div class="card-body">
                     <div class="card">
-                        <form class="form p-t-20" action="{{route('admin_product_update',['id'=>$data->id])}}" method="POST " >
+                        <form class="form p-t-20" action="{{route('admin_product_update',['id'=>$data->id])}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label >Parent</label>
@@ -43,14 +43,12 @@
                                     @foreach($datalist as $rs)
                                         <option value="{{ $rs->id }}" @if($rs->id == $data->category_id) selected="selected" @endif>{{ $rs->title }}</option>
                                     @endforeach
-
                                 </select>
-
                             </div>
+
                             <div class="form-group">
                                 <label for="pwd1">Title</label>
                                 <div class="input-group mb-3">
-
                                     <input type="text" id="title" name="title" value="{{$data->title}}"class="form-control" placeholder="Title" aria-label="Password"
                                            aria-describedby="basic-addon3">
                                 </div>
@@ -80,8 +78,6 @@
 
                                 </select>
                             </div>
-
-
                             <div class="form-group">
                                 <label for="pwd1">Slug</label>
                                 <div class="input-group mb-3">
@@ -89,64 +85,42 @@
                                            aria-describedby="basic-addon3">
                                 </div>
                             </div>
-
-                            <div class="form-group">
-                                <label for="pwd1">Files</label>
-                                <div class="input-group mb-3">
-
-                                    <input type="string" name="files" value="{{$data->files}}" class="form-control" placeholder="files" aria-label="Password"
-                                           aria-describedby="basic-addon3">
-                                </div>
-                            </div>
-
                             <div class="form-group">
                                 <label for="pwd1">Lectures</label>
                                 <div class="input-group mb-3">
-
                                     <input type="string" name="lectures" value="{{$data->lectures}}"class="form-control" placeholder="lectures" aria-label="Password"
                                            aria-describedby="basic-addon3">
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <label for="pwd1">Subject</label>
                                 <div class="input-group mb-3">
-
                                     <input type="string" name="subject" value="{{$data->subject}}" class="form-control" placeholder="subject" aria-label="Password" aria-describedby="basic-addon3">
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <label for="pwd1">Grade</label>
                                 <div class="input-group mb-3">
-
                                     <input type="integer" name="grade" value="{{$data->grade}}" class="form-control" placeholder="grade" aria-label="Password" aria-describedby="basic-addon3">
                                 </div>
                             </div>
-
-
                             <div class="form-group">
                                 <label for="pwd1">Department</label>
                                 <div class="input-group mb-3">
-
                                     <input type="string" name="department"  value="{{$data->department}}"class="form-control" placeholder="department" aria-label="Password"
                                            aria-describedby="basic-addon3">
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <label for="pwd1">Teacher</label>
                                 <div class="input-group mb-3">
-
                                     <input type="string" name="teacher" value="{{$data->teacher}}" class="form-control" placeholder="teacher" aria-label="Password"
                                            aria-describedby="basic-addon3">
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <label for="pwd1">School</label>
                                 <div class="input-group mb-3">
-
                                     <input type="string" name="school" value="{{$data->school}}" class="form-control" placeholder="school" aria-label="Password"
                                            aria-describedby="basic-addon3">
                                 </div>
@@ -154,18 +128,26 @@
                             <div class="form-group">
                                 <label for="pwd1">Details</label>
                                 <div class="input-group mb-3">
-
                                     <input type="text" name="detail" value="{{$data->detail}}" class="form-control" placeholder="detail" aria-label="Password"
                                            aria-describedby="basic-addon3">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>Image</label>
+                                <label for="pwd1">Image</label>
                                 <div class="input-group mb-3">
-                                    <input type="" name="image" value="{{$data->image}}">
-
+                                    <input type="file" name="image" value="{{$data->image}}">
                                     @if ($data->image)
                                         <img src="{{Storage::url($data->image)}}" height="30" alt="">
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pwd1">Files</label>
+                                <div class="input-group mb-3">
+                                    <input type="file" name="files" value="{{$data->files}}">
+                                    @if ($data->files)
+                                        <img src="{{Storage::url($data->files)}}" height="30" alt="">
                                     @endif
                                 </div>
                             </div>

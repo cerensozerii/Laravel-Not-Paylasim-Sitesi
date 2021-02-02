@@ -47,7 +47,6 @@ class ProductController extends Controller
         $data->description = $request->input('description');
         $data->status = $request->input('status');
         $data->slug = $request->input('slug');
-        $data->files = $request->input('files');
         $data->lectures = $request->input('lectures');
         $data->subject = $request->input('subject');
         $data->grade = $request->input('grade');
@@ -57,7 +56,8 @@ class ProductController extends Controller
         $data->category_id = $request->input('category_id');
         $data->user_id = Auth::id();
         $data->detail = $request->input('detail');
-
+        $data->image = Storage::putFile('images', $request->file('image'));
+        $data->files = Storage::putFile('files', $request->file('files'));
         $data->save();
         return redirect()->route('admin_products');
     }
@@ -102,7 +102,6 @@ class ProductController extends Controller
         $data->description = $request->input('description');
         $data->status = $request->input('status');
         $data->slug = $request->input('slug');
-        $data->files = $request->input('files');
         $data->lectures = $request->input('lectures');
         $data->subject = $request->input('subject');
         $data->grade = $request->input('grade');
@@ -112,11 +111,11 @@ class ProductController extends Controller
         $data->category_id = $request->input('category_id');
         $data->user_id = Auth::id();
         $data->detail = $request->input('detail');
+        $data->image = Storage::putFile('images', $request->file('image'));
+        $data->files = Storage::putFile('files', $request->file('files'));
         $data->save();
         return redirect()->route('admin_products');
-
     }
-
     /**
      * Remove the specified resource from storage.
      *

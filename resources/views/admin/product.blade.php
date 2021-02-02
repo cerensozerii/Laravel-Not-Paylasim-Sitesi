@@ -33,7 +33,6 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-
                             <div class="card">
                                 <div class="card-body">
                                     <div class="table-responsive m-t-40">
@@ -47,7 +46,6 @@
                                                 <th>Description</th>
                                                 <th>Status</th>
                                                 <th>Slug</th>
-                                                <th>Files</th>
                                                 <th>Lectures</th>
                                                 <th>Subject</th>
                                                 <th>Grade</th>
@@ -56,6 +54,7 @@
                                                 <th>School</th>
                                                 <th>Detail</th>
                                                 <th>Image</th>
+                                                <th>Files</th>
                                                 <th>Edit</th>
                                                 <th>Delete</th>
                                             </tr>
@@ -64,14 +63,13 @@
                                             <tbody>
                                             @foreach($datalist as $rs)
                                                 <tr>
-                                                    <td>{{$rs -> id}} </td>
+                                                    <td>{{$rs -> id}}</td>
                                                     <td>{{$rs -> parent_id}}</td>
                                                     <td>{{$rs -> title}} </td>
                                                     <td>{{$rs -> keywords}} </td>
                                                     <td>{{$rs -> description}}</td>
                                                     <td>{{$rs -> status}} </td>
                                                     <td>{{$rs -> slug}} </td>
-                                                    <td>{{$rs -> files}} </td>
                                                     <td>{{$rs -> lectures}} </td>
                                                     <td>{{$rs -> subject}} </td>
                                                     <td>{{$rs -> grade}} </td>
@@ -80,9 +78,13 @@
                                                     <td>{{$rs -> school}} </td>
                                                     <td>{{$rs -> detail}} </td>
                                                     <td>
-
                                                         @if ($rs->image)
                                                             <img src="{{Storage::url($rs->image)}}" height="30" alt="">
+                                                        @endif
+                                                    </td>
+                                                    <td>
+                                                        @if ($rs->files)
+                                                            <img src="{{Storage::url($rs->files)}}" height="30" alt="">
                                                         @endif
                                                     </td>
                                                     <td><a href="{{route('admin_product_edit',['id'=> $rs->id])}}">  Edit </a></td>

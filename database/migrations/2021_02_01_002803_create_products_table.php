@@ -22,7 +22,6 @@ class CreateProductsTable extends Migration
             $table->string('status',5)->nullable()->default('False');
             $table->string('slug',100)->nullable();
             $table->string('user_id')->nullable()->default('False');
-            $table->string('files')->nullable();
             $table->string('lectures')->nullable();
             $table->string('subject')->nullable();
             $table->integer('grade')->nullable();
@@ -30,7 +29,8 @@ class CreateProductsTable extends Migration
             $table->string('teacher')->nullable();
             $table->string('school')->nullable();
             $table->text('detail')->nullable();
-            $table->string('image',100)->nullable();
+            $table->string('image')->nullable();
+            $table->string('files')->nullable();
             $table->timestamps();
 
 
