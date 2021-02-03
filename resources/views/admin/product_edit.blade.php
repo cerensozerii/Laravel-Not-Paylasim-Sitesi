@@ -38,8 +38,8 @@
                         <form class="form p-t-20" action="{{route('admin_product_update',['id'=>$data->id])}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <label >Parent</label>
-                                <select class="form-control select2" name="parent_id" style="width: 100%">
+                                <label >Category</label>
+                                <select class="form-control select2" name="category_id" style="width: 100%">
                                     @foreach($datalist as $rs)
                                         <option value="{{ $rs->id }}" @if($rs->id == $data->category_id) selected="selected" @endif>{{ $rs->title }}</option>
                                     @endforeach
