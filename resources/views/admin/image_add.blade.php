@@ -20,14 +20,12 @@
         <div class="col-md-5 align-self-center">
             <h4 class="text-themecolor">{{$data->title}} </h4>
         </div>
-
     </div>
     <!--***********-->
     <div class="card body-primary">
         <div class="card-header bg-info">
             <h4 class="m-b-0 text-white">Add Image</h4>
         </div>
-
         <div class="card-body">
             <div class="card">
                 <form class="form p-t-20" action="{{route('admin_image_store',['product_id'=>$data->id])}}" method="post" enctype="multipart/form-data">
@@ -35,13 +33,10 @@
                     <div class="form-group">
                         <label for="pwd1">Title</label>
                         <div class="input-group mb-3">
-
                             <input type="text" id="title" name="title" class="form-control" placeholder="Title" aria-label="Password"
                                    aria-describedby="basic-addon3">
                         </div>
                     </div>
-
-
                     <div class="form-group">
                         <label>Image</label>
                         <div class="input-group mb-3">
@@ -49,13 +44,8 @@
                             <input type="file" name="image">
                         </div>
                     </div>
-
-
-
                     <button type="submit" class="btn btn-success waves-effect waves-light m-r-10"> Add Image</button>
-
                 </form>
-
                 <table id="myTable" class="table table-bordered table-striped">
                     <thead>
                     <tr>
@@ -76,8 +66,9 @@
                                 @endif
                             </td>
                             <td>
-                                <a href="{{route('admin_image_delete', ['id'=> $rs->id,'product_id'=>$data->id])}}" onclick="return confirm('Delete! Are you sure ?')">
-                                    <img src="{{asset('assets/admin/images')}}/delete.jpeg" height="25"> </a>
+                                <a href="{{route('admin_image_delete', ['id'=> $rs->id,'product_id'=>$data->id])}}"
+                                   onclick="return confirm('Delete! Are you sure ?')">
+                                    <img src="{{asset('assets/admin/images')}}/delete.jpg" height="25"> </a>
                             </td>
                         </tr>
                     @endforeach
