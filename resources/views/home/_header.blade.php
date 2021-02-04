@@ -1,4 +1,5 @@
 <header>
+
     <!-- header inner -->
     <div class="header">
         <div class="container">
@@ -17,8 +18,22 @@
                             <nav class="main-menu">
                                 <ul class="menu-area-main">
                                     <li class="active"><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About us</a></li>
-                                    <li><a href="books.html">Our Books</a></li>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="books.html">The Notes</a>
+                                        <ul>
+                                                <li><a href="#">High School Notes</a></li>
+                                                <li><a href="#">Architecture</a></li>
+                                                <li><a href="#">Art and Art History </a></li>
+                                                <li><a href="#">Economics </a></li>
+                                                <li><a href="#">Engineering </a></li>
+                                                <li><a href="#">Health & Medicine</a></li>
+                                                <li><a href="#">Humanities</a></li>
+                                                <li><a href="#">Language and Literature</a></li>
+                                                <li><a href="#">Law </a></li>
+                                                <li><a href="#">Social Sciences</a></li>
+                                        </ul>
+                                    </li>
+
                                     <li><a href="library.html">library</a></li>
                                     <li><a href="contact.html">Contact us</a></li>
                                     <li class="mean-last"><a href="#"><img

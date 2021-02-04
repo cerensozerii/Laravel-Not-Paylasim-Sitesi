@@ -52,18 +52,18 @@
                                             </thead>
                                             <tbody>
                                             @foreach ($datalist as $rs)
-
                                                 <tr>
                                                     <td>{{ $rs->id }}</td>
-                                                    <td>{{ $rs->parent_id }}</td>
+                                                    <td>
+                                                        {{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs, $rs->title)}}
+                                                    </td>
                                                     <td>{{ $rs->title }}</td>
                                                     <td>{{ $rs->status }}</td>
                                                     <td>{{ $rs->slug }}</td>
-                                                    <td><a href="{{route('admin_category_edit',['id'=> $rs->id])}}">
-                                                            Edit</a></td>
-                                                    <td><a href="{{route('admin_category_delete',['id'=> $rs->id])}}"
-                                                           onclick="return confirm('Delete! Are you sure ?')">
-                                                            Delete</a></td>
+                                                    <td> <a href="{{route('admin_category_edit',['id'=> $rs->id])}}" onclick=""> <img src="{{asset('assets/admin/images')}}/edit.png" height="25"> </a>
+                                                    </td>
+                                                    <td> <a href="{{route('admin_category_delete', ['id'=> $rs->id])}}" onclick="return confirm('Delete! Are you sure ?')"> <img src="{{asset('assets/admin/images')}}/delete.jpg" height="25"> </a>
+                                                    </td>
                                                 </tr>
 
                                             @endforeach
