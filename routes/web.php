@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 /*
@@ -26,6 +27,7 @@ Route::get('/library',[HomeController::class,'library'])->name('library');
 Route::get('/contact',[HomeController::class,'contact'])->name('contact');
 
 Route::get('/test/{id}/{name}',[\App\Http\Controllers\HomeController::class,'test'])->whereNumber('id')->whereAlpha('name')->name('test');
+
 Route::middleware('auth')->prefix('admin')->group(function(){
     Route::get('/', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_home');
 
@@ -58,6 +60,13 @@ Route::middleware('auth')->prefix('admin')->group(function(){
 
 });
 
+Route::middleware('auth')->prefix('myuser')->namespace('myuser')->group(function() {
+
+    Route::get('/',[UserController::class,'index'])->name('myprofile');
+    Route::get('/',[UserController::class,'index'])->name('mynotes');
+
+
+});
 Route::get('/admin/login',[HomeController::class,'login'])->name('admin_login');
 Route::post('/admin/logincheck',[HomeController::class,'logincheck'])->name('admin_logincheck');
 Route::get('/logout',[HomeController::class,'logout'])->name('logout');

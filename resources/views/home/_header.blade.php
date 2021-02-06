@@ -44,7 +44,7 @@
                                                 src="{{ asset('assets')}}/images/top-icon.png" alt="#"/></a>
                                         <ul>
                                             @auth
-                                            <li><a href="#"> {{Auth::user()->name}} </a></li>
+                                            <li><a href="{{route('myprofile')}}"> {{Auth::user()->name}} </a></li>
                                             @elseauth
                                             <li><a href="#"> Login </a></li>
                                             @endauth
