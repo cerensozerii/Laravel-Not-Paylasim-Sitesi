@@ -28,8 +28,7 @@ return [
     |
     */
 
-    'features' => [
-        // Features::profilePhotos(),
+    'features' => [Features::profilePhotos(),
         // Features::api(),
         // Features::teams(),
     ],

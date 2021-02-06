@@ -22,7 +22,7 @@ Route::get('/', function () {
 });
 Route::get('/home',[HomeController::class,'index'])->name('homepage');
 Route::get('/aboutus',[HomeController::class,'aboutus'])->name('aboutus');
-Route::get('/thenotes',[HomeController::class,'thenotes'])->name('thenotes');
+Route::post('/thenotes',[HomeController::class,'thenotes'])->name('thenotes');
 Route::get('/library',[HomeController::class,'library'])->name('library');
 Route::get('/contact',[HomeController::class,'contact'])->name('contact');
 
@@ -60,12 +60,8 @@ Route::middleware('auth')->prefix('admin')->group(function(){
 
 });
 
-Route::middleware('auth')->prefix('myuser')->namespace('myuser')->group(function() {
-
+Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function() {
     Route::get('/',[UserController::class,'index'])->name('myprofile');
-    Route::get('/',[UserController::class,'index'])->name('mynotes');
-
-
 });
 Route::get('/admin/login',[HomeController::class,'login'])->name('admin_login');
 Route::post('/admin/logincheck',[HomeController::class,'logincheck'])->name('admin_logincheck');

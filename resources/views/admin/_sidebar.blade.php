@@ -15,7 +15,7 @@
                         <li><a href="javascript:void(0)"><i class="ti-email"></i> Inbox</a></li>
                         <li><a href="javascript:void(0)"><i class="ti-settings"></i> Account Setting</a></li>
                         @auth
-                            <li><a href="{{route('admin_logout')}}"><i class="fa fa-power-off"></i> Logout</a></li>
+                            <li><a href="{{route('logout')}}"><i class="fa fa-power-off"></i> Logout</a></li>
                         @endauth
                     </ul>
                 </li>

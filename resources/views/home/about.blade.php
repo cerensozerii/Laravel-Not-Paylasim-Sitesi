@@ -33,33 +33,19 @@
 
 @include('home._header')
 
-@section('title', 'User Profile')
-
-
-<!-- Library -->
-<div class="section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 offset-md-1">
-                <div>
-                    <li><a href="{{route('homepage')}}">Home</a></li>
-                    <li><h2>User <strong class="black">Profile</strong></h2></li>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="section">
+    <section id="aa-error">
         <div class="container">
-            <div class="row">
-                <div id=aside class="col-md-2">
-                    @include('home.usermenu')
+            <row>
+                <div class="col-md-12">
+                    <div class="aa-error-area">
+                        <h3>AboutUs</h3>
+                        <a href="{{route('homepage')}}">Back Home</a>
+                    </div>
                 </div>
-                <div id=aside class="col-md-10">
-                    @include('profile.show')
-                </div>
-            </div>
+            </row>
         </div>
-    </div>
-</div>
+    </section>
+
+@include('home._about')
 
 @include('home._footer')
