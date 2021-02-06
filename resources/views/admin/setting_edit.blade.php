@@ -230,6 +230,15 @@
                                                                aria-describedby="basic-addon3">
                                                     </div>
                                                 </div>
+                                                <div class="form-group">
+                                                    <label for="pwd1">Linkedin</label>
+                                                    <div class="input-group mb-3">
+
+                                                        <input type="text" name="linkedin" value="{{$data->linkedin}}" class="form-control"
+                                                               placeholder="linkedin" aria-label="Password"
+                                                               aria-describedby="basic-addon3">
+                                                    </div>
+                                                </div>
 
 
                                             </div>

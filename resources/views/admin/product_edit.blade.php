@@ -129,8 +129,7 @@
                             <div class="form-group">
                                 <label for="pwd1">Details</label>
                                 <div class="input-group mb-3">
-                                    <input type="text" name="detail" value="{{$data->detail}}" class="form-control" placeholder="detail" aria-label="Password"
-                                           aria-describedby="basic-addon3">
+                                    <textarea id="summernote" name="detail"> {{$data->detail}} </textarea>
                                 </div>
                             </div>
                             <div class="form-group">

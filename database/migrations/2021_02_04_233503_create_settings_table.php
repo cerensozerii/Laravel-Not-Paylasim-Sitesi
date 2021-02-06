@@ -30,6 +30,7 @@ class CreateSettingsTable extends Migration
             $table->string('facebook',100)->nullable();
             $table->string('instagram',100)->nullable();
             $table->string('twitter',100)->nullable();
+            $table->string('linkedin',100)->nullable();
             $table->text('aboutus')->nullable();
             $table->text('contact')->nullable();
             $table->text('references')->nullable();

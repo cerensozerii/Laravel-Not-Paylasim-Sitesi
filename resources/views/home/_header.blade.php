@@ -1,3 +1,7 @@
+@php
+    $setting=\App\Http\Controllers\HomeController::getsetting()
+@endphp
+
 <header>
 
     <!-- header inner -->
@@ -7,8 +11,8 @@
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
                     <div class="full">
                         <div class="center-desk">
-                            <div class="logo"><a href="index.html"><img src="{{ asset('assets')}}/images/logo.png"
-                                                                        alt="#"></a></div>
+                            <div class="logo"><a href="{{route('homepage')}}"><img src="{{ asset('assets')}}/images/logo1.png"
+                                                                        alt="#"> </a></div>
                         </div>
                     </div>
                 </div>
@@ -17,9 +21,9 @@
                         <div class="limit-box">
                             <nav class="main-menu">
                                 <ul class="menu-area-main">
-                                    <li class="active"><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="books.html">The Notes</a>
+                                    <li class="active"><a href="{{route('homepage')}}">Home</a></li>
+                                    <li><a href="{{route('aboutus')}}">About Us</a></li>
+                                    <li><a href="{{route('thenotes')}}">The Notes</a>
                                         <ul>
                                                 <li><a href="#">High School Notes</a></li>
                                                 <li><a href="#">Architecture</a></li>
@@ -33,13 +37,30 @@
                                                 <li><a href="#">Social Sciences</a></li>
                                         </ul>
                                     </li>
+                                    <li><a href="{{route('library')}}">library</a></li>
+                                    <li><a href="{{route('contact')}}">Contact us</a></li>
+                                    <li class="mean-last">
+                                        <a href="{{route('login')}}"><img
+                                                src="{{ asset('assets')}}/images/top-icon.png" alt="#"/></a>
+                                        <ul>
+                                            @auth
+                                            <li><a href="#"> {{Auth::user()->name}} </a></li>
+                                            @elseauth
+                                            <li><a href="#"> Login </a></li>
+                                            @endauth
+                                            <li><a href="{{route('logout')}}"> Logout </a></li>
+                                        </ul>
+                                        @guest
+                                            <ul>
+                                            <li><a href="{{route('login')}}">Login</a></li>
+                                                <li><a href="{{route('register')}}">Join</a> </li>
+                                            </ul>
+                                            @endguest
 
-                                    <li><a href="library.html">library</a></li>
-                                    <li><a href="contact.html">Contact us</a></li>
+                                    </li>
                                     <li class="mean-last"><a href="#"><img
                                                 src="{{ asset('assets')}}/images/search_icon.png" alt="#"/></a></li>
-                                    <li class="mean-last"><a href="#"><img
-                                                src="{{ asset('assets')}}/images/top-icon.png" alt="#"/></a></li>
+
                                 </ul>
                             </nav>
                         </div>
