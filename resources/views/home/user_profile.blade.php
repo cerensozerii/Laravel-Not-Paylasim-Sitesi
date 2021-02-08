@@ -37,13 +37,16 @@
 
 
 <!-- Library -->
-<div class="section">
+<section id="aa-error-area">
     <div class="container">
         <div class="row">
-            <div class="col-md-10 offset-md-1">
-                <div>
+            <div class="col-md-12">
+                <div class="aa-error-area">
+                    <li><h2>User Profile</h2></li>
+                    <li><h2>User Profile</h2></li>
+                    <li><h2>User Profile</h2></li>
                     <li><a href="{{route('homepage')}}">Home</a></li>
-                    <li><h2>User <strong class="black">Profile</strong></h2></li>
+                    <li>User Profile</li>
                 </div>
             </div>
         </div>
@@ -60,6 +63,5 @@
             </div>
         </div>
     </div>
-</div>
-
+<section>
 @include('home._footer')

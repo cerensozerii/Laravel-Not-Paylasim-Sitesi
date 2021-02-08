@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -25,6 +26,7 @@ Route::get('/aboutus',[HomeController::class,'aboutus'])->name('aboutus');
 Route::post('/thenotes',[HomeController::class,'thenotes'])->name('thenotes');
 Route::get('/library',[HomeController::class,'library'])->name('library');
 Route::get('/contact',[HomeController::class,'contact'])->name('contact');
+Route::post('/sendmessage',[HomeController::class,'sendmessage'])->name('sendmessage');
 
 Route::get('/test/{id}/{name}',[\App\Http\Controllers\HomeController::class,'test'])->whereNumber('id')->whereAlpha('name')->name('test');
 
@@ -48,7 +50,14 @@ Route::middleware('auth')->prefix('admin')->group(function(){
         Route::get('delete/{id}',[\App\Http\Controllers\Admin\ProductController::class,'destroy'])->name('admin_product_delete');
         Route::get('show',[\App\Http\Controllers\Admin\ProductController::class,'show'])->name('admin_product_show');
     });
+    Route::prefix('messages')->group(function(){
+        Route::get('/',[MessageController::class,'index'])->name('admin_message');
+        Route::get('edit/{id}',[MessageController::class,'edit'])->name('admin_message_edit');
+        Route::post('update/{id}',[MessageController::class,'update'])->name('admin_message_update');
+        Route::get('delete/{id}',[MessageController::class,'destroy'])->name('admin_message_delete');
+        Route::get('show',[MessageController::class,'show'])->name('admin_message_show');
 
+    });
     Route::prefix('image')->group(function(){
         Route::get('create/{product_id}',[\App\Http\Controllers\Admin\ImageController::class,'create'])->name('admin_image_add');
         Route::post('store/{product_id}',[\App\Http\Controllers\Admin\ImageController::class,'store'])->name('admin_image_store');
