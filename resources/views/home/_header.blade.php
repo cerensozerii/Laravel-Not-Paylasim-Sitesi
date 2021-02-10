@@ -28,7 +28,6 @@
                                             @endforeach
                                         </ul>
                                     </li>
-                                    <li><a href="{{route('library')}}">library</a></li>
                                     <li><a href="{{route('contact')}}">Contact us</a></li>
                                     <li class="mean-last">
                                         <a href="{{route('login')}}"><img

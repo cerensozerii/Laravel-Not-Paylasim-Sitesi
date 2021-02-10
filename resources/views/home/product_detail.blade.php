@@ -37,14 +37,14 @@
 <section id="aa-error-area">
     <div class="about">
         <div class="container">
-            <div class="row box ">
+            <div class="row box">
                 <div class="col-md-12">
                     <div class="aboutheading">
                         <h2><strong class="black">{{$data->title }} </strong></h2>
                         <img src="{{Storage::url($data->image)}}" style="height:400px" alt="">
                         <h3><strong class="black">{{$data->description }}</strong></h3>
                         <h3><strong class="black">{{$data->lectures }}</strong></h3>
-                        <h3><strong class="black">{{$data->subject }}</strong></h3>                        <h3><strong class="black">{{$data->grade }}</strong></h3>
+                        <h3><strong class="black">{{$data->subject }}</strong></h3>
                         <h3><strong class="black">{{$data->grade }}</strong></h3>
                         <h3><strong class="black">{{$data->department }}</strong></h3>
                         <h3><strong class="black">{{$data->teacher }}</strong></h3>

@@ -39,10 +39,7 @@
 @include('home._slide')
 @section('content')
 @show
-@include('home._about')
-@include('home._library')
 @include('home._footer')
 @yield('footerjs')
-
 </body>
 </html>
