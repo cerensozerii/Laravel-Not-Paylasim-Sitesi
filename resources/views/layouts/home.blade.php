@@ -37,10 +37,10 @@
 <!-- end loader -->
 @include('home._header')
 @include('home._slide')
-@include('home._about')
-@include('home._library')
 @section('content')
 @show
+@include('home._about')
+@include('home._library')
 @include('home._footer')
 @yield('footerjs')
 

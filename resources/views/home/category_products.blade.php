@@ -5,7 +5,6 @@
     $parentCategories=\App\Http\Controllers\HomeController::CategoryList()
 @endphp
     <!DOCTYPE html>
-<html lang="en">
 <head>
     <!-- basic -->
     <meta charset="utf-8">
@@ -39,15 +38,16 @@
     <div class="container">
         <div class="row box">
             @foreach($datalist as $rs)
-                <div class="col-md-6 col-sm-6 col-xs-6">
-                    <div class="aboutheading">
-                        <h3><strong class="black">{{$data->title }} Note List</strong></h3>
-                        <img src="{{Storage::url($rs->image)}}" style="height:200px" alt="">
-                        <div class="aa-secondary-btn" href="{{route('product',['id'=>$rs->id])}}"><a href="#" class="aa-view-btn">View Details</a>
-                        </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="aboutheading">
+                    <h3><strong class="black">{{$data->title }} Note List</strong></h3>
+                    <img src="{{Storage::url($rs->image)}}" style="height:200px" alt="">
+                    <div class="aa-secondary-btn" href="{{route('product',['id'=>$rs->id])}}"><a href="{{route('product',['id'=>$rs->id])}}" class="aa-view-btn">View Details</a>
                     </div>
                 </div>
+            </div>
             @endforeach
+        </div>
         </div>
     </div>
 </div>
