@@ -21,7 +21,7 @@
                                 <ul class="menu-area-main">
                                     <li class="active"><a href="{{route('homepage')}}">Home</a></li>
                                     <li><a href="{{route('aboutus')}}">About Us</a></li>
-                                    <li><a href="{{route('thenotes')}}">The Notes</a>
+                                    <li><a href="#">The Notes</a>
                                         <ul class="menu-area" role="menu">
                                             @foreach($parentCategories as $rs)
                                                 <li><a href="{{route('categoryproducts',['id'=>$rs->id])}}"class="dropdown-item-text">{{$rs->title}}</a></li>
