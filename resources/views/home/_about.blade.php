@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-10 offset-md-1">
                 <div class="aboutheading">
-                    <h2>About <strong class="black">Us</strong></h2>
+                    <h2>Hakkımızda</h2>
                     <span>Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</span>
                 </div>
             </div>

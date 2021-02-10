@@ -41,7 +41,6 @@
 @include('home._library')
 @section('content')
 @show
-
 @include('home._footer')
 @yield('footerjs')
 

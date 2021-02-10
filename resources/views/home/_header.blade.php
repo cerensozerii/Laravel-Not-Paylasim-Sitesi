@@ -1,9 +1,7 @@
 @php
-    $setting=\App\Http\Controllers\HomeController::getsetting()
+    $parentCategories=\App\Http\Controllers\HomeController::CategoryList()
 @endphp
-
 <header>
-
     <!-- header inner -->
     <div class="header">
         <div class="container">
@@ -24,17 +22,10 @@
                                     <li class="active"><a href="{{route('homepage')}}">Home</a></li>
                                     <li><a href="{{route('aboutus')}}">About Us</a></li>
                                     <li><a href="{{route('thenotes')}}">The Notes</a>
-                                        <ul>
-                                                <li><a href="#">High School Notes</a></li>
-                                                <li><a href="#">Architecture</a></li>
-                                                <li><a href="#">Art and Art History </a></li>
-                                                <li><a href="#">Economics </a></li>
-                                                <li><a href="#">Engineering </a></li>
-                                                <li><a href="#">Health & Medicine</a></li>
-                                                <li><a href="#">Humanities</a></li>
-                                                <li><a href="#">Language and Literature</a></li>
-                                                <li><a href="#">Law </a></li>
-                                                <li><a href="#">Social Sciences</a></li>
+                                        <ul class="menu-area" role="menu">
+                                            @foreach($parentCategories as $rs)
+                                                <li><a href="{{route('categoryproducts',['id'=>$rs->id])}}"class="dropdown-item-text">{{$rs->title}}</a></li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                     <li><a href="{{route('library')}}">library</a></li>
@@ -56,11 +47,9 @@
                                                 <li><a href="{{route('register')}}">Join</a> </li>
                                             </ul>
                                             @endguest
-
                                     </li>
                                     <li class="mean-last"><a href="#"><img
                                                 src="{{ asset('assets')}}/images/search_icon.png" alt="#"/></a></li>
-
                                 </ul>
                             </nav>
                         </div>

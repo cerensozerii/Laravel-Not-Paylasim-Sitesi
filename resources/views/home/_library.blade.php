@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-10 offset-md-1">
                 <div class="titlepage">
-                    <h2>Our <strong class="black">Library </strong></h2>
+                    <h2><strong class="black">Kütüphane </strong></h2>
                     <span>adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</span>
                 </div>
             </div>

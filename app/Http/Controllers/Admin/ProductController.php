@@ -21,7 +21,6 @@ class ProductController extends Controller
         $datalist = Product::all();
         return view('admin.product', ['datalist' => $datalist]);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -32,7 +31,6 @@ class ProductController extends Controller
         $datalist = Category::with('children')->get();
         return view('admin.product_add',['datalist'=>$datalist]);
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -65,7 +63,6 @@ class ProductController extends Controller
         $data->save();
         return redirect()->route('admin_products');
     }
-
     /**
      * Display the specified resource.
      *
@@ -76,7 +73,6 @@ class ProductController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -87,11 +83,8 @@ class ProductController extends Controller
     {
         $data = Product::find($id);
         $datalist = Category::with('children')->get();
-
-
         return view('admin.product_edit',['data' => $data,'datalist' => $datalist]);
     }
-
     /**
      * Update the specified resource in storage.
      *

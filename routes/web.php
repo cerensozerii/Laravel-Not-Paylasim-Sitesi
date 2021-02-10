@@ -18,15 +18,16 @@ use App\Http\Controllers\HomeController;
 Route::get('/home2', function () {
     return view('welcome');
 });
-Route::get('/', function () {
-    return view('home.index');
-});
+Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('/home',[HomeController::class,'index'])->name('homepage');
 Route::get('/aboutus',[HomeController::class,'aboutus'])->name('aboutus');
 Route::post('/thenotes',[HomeController::class,'thenotes'])->name('thenotes');
 Route::get('/library',[HomeController::class,'library'])->name('library');
 Route::get('/contact',[HomeController::class,'contact'])->name('contact');
 Route::post('/sendmessage',[HomeController::class,'sendmessage'])->name('sendmessage');
+Route::get('/product/{id}',[HomeController::class,'product'])->name('product');
+Route::get('/categoryproducts/{id}',[HomeController::class,'categoryproducts'])->name('categoryproducts');
+
 
 Route::get('/test/{id}/{name}',[\App\Http\Controllers\HomeController::class,'test'])->whereNumber('id')->whereAlpha('name')->name('test');
 
@@ -79,8 +80,6 @@ Route::middleware('auth')->prefix('user')->namespace('user')->group(function() {
 Route::get('/admin/login',[HomeController::class,'login'])->name('admin_login');
 Route::post('/admin/logincheck',[HomeController::class,'logincheck'])->name('admin_logincheck');
 Route::post('/logout',[HomeController::class,'logout'])->name('logout');
-
-
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

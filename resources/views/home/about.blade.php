@@ -32,20 +32,6 @@
 </head>
 
 @include('home._header')
-
-<section id="aa-error">
-    <div class="container">
-        <row>
-            <div class="col-md-12">
-                <div class="aa-error-area">
-                    <h3>AboutUs</h3>
-                    <a href="{{route('homepage')}}">Back Home</a>
-                </div>
-            </div>
-        </row>
-    </div>
-</section>
-
 <div class="about">
     <div class="container">
         <div class="row">
@@ -53,7 +39,6 @@
                 <div class="aboutheading">
                     <h2>About <strong class="black">Us</strong></h2>
                     <span>Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</span>
-
                     <p> Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         Ut
                         enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -83,7 +68,7 @@
                         aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
                         Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in rep
+                        consequat.
                     </p>
                 </div>
             </div>
