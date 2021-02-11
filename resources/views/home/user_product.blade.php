@@ -47,16 +47,15 @@
                         @include('home.usermenu')
                     </div>
                     <div id=aside class="col-md-10">
-                        <div class="row page-titles">
-                            <div class="col-md-5 align-self-center">
+                        <div class="row-col-span 6">
+                            <div class="col-md-4 align-self-center">
                                 <h4 class="text-themecolor">Products</h4>
                             </div>
-                            <div class="col-md-7 align-self-center text-right">
+                            <div class="col-md-12 align-self-center text-right">
                                 <div class="d-flex justify-content-end align-items-center">
                                     <a href="{{route('user_product_add')}}"
                                        class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i>
-                                        Add
-                                        Product </a>
+                                        Add Product </a>
                                     @include('home.message')
                                 </div>
                             </div>

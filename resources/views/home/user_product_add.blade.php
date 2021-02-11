@@ -28,13 +28,14 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 </head>
+
+@include('home._header')
+
 <section id="aa-error">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="aa-error-area">
-                    <li><h2>User Profile</h2></li>
-                    <li><h2>User Profile</h2></li>
                     <li><h2>User Profile</h2></li>
                     <li>User Profile</li>
                 </div>
@@ -47,7 +48,7 @@
                 <div class="col-md-2">
                     @include('home.usermenu')
                 </div>
-                <div  class="col-md-10">
+                <div class="col-md-10">
                     <div class="card-body">
                         <div class="card">
                             <form class="form p-t-20" action="{{route('user_product_store')}}" method="post"
@@ -63,132 +64,133 @@
                                             @endforeach
                                         </select>
                                     </div>
-
-                                    <div class="form-group">
-                                        <label for="pwd1">Title</label>
-                                        <div class="input-group mb-3">
-                                            <input type="text" id="title" name="title" class="form-control"
-                                                   placeholder="Title"
-                                                   aria-label="Password"
-                                                   aria-describedby="basic-addon3">
-                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd1">Title</label>
+                                    <div class="input-group mb-3">
+                                        <input type="text" id="title" name="title" class="form-control"
+                                               placeholder="Title"
+                                               aria-label="Password"
+                                               aria-describedby="basic-addon3">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="pwd1">Keywords</label>
-                                        <div class="input-group mb-3">
-                                            <input type="text" name="keywords" class="form-control"
-                                                   placeholder="Keywords"
-                                                   aria-label="Password"
-                                                   aria-describedby="basic-addon3">
-                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd1">Keywords</label>
+                                    <div class="input-group mb-3">
+                                        <input type="text" name="keywords" class="form-control"
+                                               placeholder="Keywords"
+                                               aria-label="Password"
+                                               aria-describedby="basic-addon3">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="pwd1">Description</label>
-                                        <div class="input-group mb-3">
-                                            <input type="text" name="description" class="form-control"
-                                                   placeholder="Description"
-                                                   aria-label="Password"
-                                                   aria-describedby="basic-addon3">
-                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd1">Description</label>
+                                    <div class="input-group mb-3">
+                                        <input type="text" name="description" class="form-control"
+                                               placeholder="Description"
+                                               aria-label="Password"
+                                               aria-describedby="basic-addon3">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="pwd1">Status</label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd1">Status</label>
+                                    <div class="input-group mb-3">
                                         <select class="form-control select2" name="status">
                                             <option selected="selected">True</option>
                                             <option>False</option>
                                         </select>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="pwd1">Slug</label>
-                                        <div class="input-group mb-3">
-                                            <input type="string" name="slug" class="form-control" placeholder="slug"
-                                                   aria-label="Password"
-                                                   aria-describedby="basic-addon3">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="pwd1">Lectures</label>
-                                        <div class="input-group mb-3">
-                                            <input type="string" name="lectures" class="form-control"
-                                                   placeholder="lectures"
-                                                   aria-label="Password"
-                                                   aria-describedby="basic-addon3">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="pwd1">Subject</label>
-                                        <div class="input-group mb-3">
-                                            <input type="string" name="subject" class="form-control"
-                                                   placeholder="subject" aria-label="Password"
-                                                   aria-describedby="basic-addon3">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="pwd1">Grade</label>
-                                        <div class="input-group mb-3">
-                                            <input type="integer" name="grade" class="form-control"
-                                                   placeholder="grade" aria-label="Password"
-                                                   aria-describedby="basic-addon3">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="pwd1">Department</label>
-                                        <div class="input-group mb-3">
-                                            <input type="string" name="department" class="form-control"
-                                                   placeholder="department"
-                                                   aria-label="Password"
-                                                   aria-describedby="basic-addon3">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="pwd1">Teacher</label>
-                                        <div class="input-group mb-3">
-                                            <input type="string" name="teacher" class="form-control"
-                                                   placeholder="teacher"
-                                                   aria-label="Password"
-                                                   aria-describedby="basic-addon3">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="pwd1">School</label>
-                                        <div class="input-group mb-3">
-                                            <input type="string" name="school" class="form-control"
-                                                   placeholder="school" aria-label="Password"
-                                                   aria-describedby="basic-addon3">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="pwd1">Detail</label>
-                                        <div class="input-group mb-3">
-                                            <textarea name="detail" id="detail" class="detail"></textarea>
-                                            <script>
-                                                CKEDITOR.replace('detail');
-                                            </script>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Image</label>
-                                        <div class="input-group mb-3">
-                                            <input type="file" name="image">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Files</label>
-                                        <div class="input-group mb-3">
-                                            <input type="file" name="files">
-                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd1">Slug</label>
+                                    <div class="input-group mb-3">
+                                        <input type="string" name="slug" class="form-control" placeholder="slug"
+                                               aria-label="Password"
+                                               aria-describedby="basic-addon3">
                                     </div>
                                 </div>
-
-                            </form>
-                            <button type="submit" class="btn btn-success waves-effect waves-light m-r-10"> Add
-                                Product
-                            </button>
+                                <div class="form-group">
+                                    <label for="pwd1">Lectures</label>
+                                    <div class="input-group mb-3">
+                                        <input type="string" name="lectures" class="form-control"
+                                               placeholder="lectures"
+                                               aria-label="Password"
+                                               aria-describedby="basic-addon3">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd1">Subject</label>
+                                    <div class="input-group mb-3">
+                                        <input type="string" name="subject" class="form-control"
+                                               placeholder="subject" aria-label="Password"
+                                               aria-describedby="basic-addon3">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd1">Grade</label>
+                                    <div class="input-group mb-3">
+                                        <input type="integer" name="grade" class="form-control"
+                                               placeholder="grade" aria-label="Password"
+                                               aria-describedby="basic-addon3">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd1">Department</label>
+                                    <div class="input-group mb-3">
+                                        <input type="string" name="department" class="form-control"
+                                               placeholder="department"
+                                               aria-label="Password"
+                                               aria-describedby="basic-addon3">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd1">Teacher</label>
+                                    <div class="input-group mb-3">
+                                        <input type="string" name="teacher" class="form-control"
+                                               placeholder="teacher"
+                                               aria-label="Password"
+                                               aria-describedby="basic-addon3">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd1">School</label>
+                                    <div class="input-group mb-3">
+                                        <input type="string" name="school" class="form-control"
+                                               placeholder="school" aria-label="Password"
+                                               aria-describedby="basic-addon3">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd1">Detail</label>
+                                    <div class="input-group mb-3">
+                                        <textarea name="detail" id="detail" class="detail"></textarea>
+                                        <script>
+                                            CKEDITOR.replace('detail');
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Image</label>
+                                    <div class="input-group mb-3">
+                                        <input type="file" name="image">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Files</label>
+                                    <div class="input-group mb-3">
+                                        <input type="file" name="files">
+                                    </div>
+                                </div>
                         </div>
+                        </form>
+                        <button type="submit" class="btn btn-success waves-effect waves-light m-r-5"> Add
+                            Product
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </section>
 @include('home._footer')

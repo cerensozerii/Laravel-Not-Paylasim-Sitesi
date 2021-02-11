@@ -31,25 +31,16 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 </head>
 
-@include('home._header')
 
 @section('title', 'User Profile')
 
+@include('home._header')
 
-<!-- Library -->
 <section id="aa-error-area">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="aa-error-area">
-                    <li>My Profile</li>
-                    <li>My Profile</li>
-                    <li>My Profile</li>
-                    <li>My Profile</li>
-                    <li>My Profile</li>
-                    <li><h2>User Profile</h2></li>
-                    <li><h2>User Profile</h2></li>
-                    <li><h2>User Profile</h2></li>
                     <li><a href="{{route('homepage')}}">Home</a></li>
                     <li>User Profile</li>
                 </div>
