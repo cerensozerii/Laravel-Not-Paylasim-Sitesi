@@ -47,8 +47,6 @@
                                             </ul>
                                             @endguest
                                     </li>
-                                    <li class="mean-last"><a href="#"><img
-                                                src="{{ asset('assets')}}/images/search_icon.png" alt="#"/></a></li>
                                 </ul>
                             </nav>
                         </div>

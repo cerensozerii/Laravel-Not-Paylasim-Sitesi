@@ -5,7 +5,7 @@
 <div class="preloader">
     <div class="loader">
         <div class="loader__figure"></div>
-        <p class="loader__label">Elite admin</p>
+        <p class="loader__label">Not Sepeti Admin</p>
     </div>
 </div>
 <!-- ============================================================== -->
@@ -22,14 +22,16 @@
             <!-- ============================================================== -->
             <div class="navbar-header">
                 <a class="navbar-brand" href="{{route('admin_home')}}">
-                    <!-- Logo icon --><b>
-                        <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                        <!-- Dark Logo icon -->
-                        <img src="{{asset('assets')}}/admin//assets/images/logo-icon.png" alt="homepage"
-                             class="dark-logo"/>
-                        <!-- Light Logo icon -->
-                        <img src="{{asset('assets')}}/admin//assets/images/logo-light-icon.png" alt="homepage"
-                             class="light-logo"/>
+                    <li class="nav-item d-none d-sm-inline-block">
+                        @include('home.message')
+                    </li>
+                    <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                    <!-- Dark Logo icon -->
+                    <img src="{{asset('assets')}}/admin//assets/images/logo-icon.png" alt="homepage"
+                         class="dark-logo"/>
+                    <!-- Light Logo icon -->
+                    <img src="{{asset('assets')}}/admin//assets/images/logo-light-icon.png" alt="homepage"
+                         class="light-logo"/>
                     </b>
                     <!--End Logo icon -->
                     <!-- Logo text --><span>
@@ -86,7 +88,7 @@
                                         <a href="javascript:void(0)">
                                             <div class="btn btn-danger btn-circle"><i class="fa fa-link"></i></div>
                                             <div class="mail-contnet">
-                                                <h5>Luanch Admin</h5> <span
+                                                <h5>Launch Admin</h5> <span
                                                     class="mail-desc">Just see the my new admin!</span> <span
                                                     class="time">9:30 AM</span></div>
                                         </a>
@@ -333,10 +335,12 @@
                     <!-- ============================================================== -->
                     <li class="nav-item dropdown u-pro">
                         <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href=""
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
-                                src="{{asset('assets')}}/admin//assets/images/users/1.jpg" alt="user" class=""> <span
-                                class="hidden-md-down">{{Auth::user()->name}} &nbsp;<i
-                                    class="fa fa-angle-down"></i></span> </a>
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            @if (Auth::user()->profile_photo_path)
+                                <img src="{{Storage::url(Auth::user()->profile_photo_path)}}" style="height: 30px" alt="user-img" class="img-circle">
+                            @endif
+                            <span class="hidden-md-down">{{Auth::user()->name}} <i class="fa fa-angle-down"></i></span>
+                        </a>
                         <div class="dropdown-menu dropdown-menu-right animated flipInY">
                             <!-- text-->
                             <a href="javascript:void(0)" class="dropdown-item"><i class="ti-user"></i> My Profile</a>
@@ -350,7 +354,8 @@
                             <a href="javascript:void(0)" class="dropdown-item"><i class="ti-settings"></i> Account
                                 Setting</a>
                             @auth
-                                <a href="{{route('logout')}}" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a>
+                                <a href="{{route('logout')}}" class="dropdown-item"><i class="fa fa-power-off"></i>
+                                    Logout</a>
                             @endauth
 
                             <div class="dropdown-divider"></div>

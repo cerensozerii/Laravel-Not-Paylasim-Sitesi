@@ -30,140 +30,136 @@
 
 @include('home._header')
 
-<section id="aa-error-area">
+<section id="aa-error">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-10">
                 <div class="aa-error-area">
                     <a href="{{route('homepage')}}">Home</a>
                     <br>User Profile<br>
                 </div>
             </div>
         </div>
-        <div class="section">
-            <div class="container">
-                <div class="row">
-                    <div id=aside class="col-md-2">
-                        @include('home.usermenu')
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    @include('home.usermenu')
+                </div>
+                <div class="col-md-10">
+                    <div class="col-md-4 align-self-center">
+                        <h4 class="text-themecolor">Products</h4>
                     </div>
-                    <div id=aside class="col-md-10">
-                        <div class="row-col-span 6">
-                            <div class="col-md-4 align-self-center">
-                                <h4 class="text-themecolor">Products</h4>
-                            </div>
-                            <div class="col-md-12 align-self-center text-right">
-                                <div class="d-flex justify-content-end align-items-center">
-                                    <a href="{{route('user_product_add')}}"
-                                       class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i>
-                                        Add Product </a>
-                                    @include('home.message')
-                                </div>
-                            </div>
+                    <div class="col-md-12 align-self-center text-right">
+                        <div class="d-flex justify-content-end align-items-center">
+                            <a href="{{route('user_product_add')}}"
+                               class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i>
+                                Add Product </a>
+                            @include('home.message')
                         </div>
-                        <!-- ============================================================== -->
-                        <!-- End Bread crumb and right sidebar toggle -->
-                        <!-- ============================================================== -->
-                        <!-- ============================================================== -->
-                        <!-- Start Page Content -->
-                        <!-- ============================================================== -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="table-responsive m-t-40">
-                                                    <table id="myTable" class="table table-bordered table-striped">
-                                                        <thead>
-                                                        <tr>
-                                                            <th>id</th>
-                                                            <th>Category</th>
-                                                            <th>Title</th>
-                                                            <th>Keywords</th>
-                                                            <th>Description</th>
-                                                            <th>Status</th>
-                                                            <th>Slug</th>
-                                                            <th>Lectures</th>
-                                                            <th>Subject</th>
-                                                            <th>Grade</th>
-                                                            <th>Department</th>
-                                                            <th>Teacher</th>
-                                                            <th>School</th>
-                                                            <th>Detail</th>
-                                                            <th>Image</th>
-                                                            <th>Files</th>
-                                                            <th>Image Gallery</th>
-                                                            <th>Edit</th>
-                                                            <th>Delete</th>
-                                                        </tr>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive m-t-40">
+                                <table id="myTable" class="table table-bordered table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>id</th>
+                                        <th>Category</th>
+                                        <th>Title</th>
+                                        <th>Keywords</th>
+                                        <th>Description</th>
+                                        <th>Status</th>
+                                        <th>Slug</th>
+                                        <th>Lectures</th>
+                                        <th>Subject</th>
+                                        <th>Grade</th>
+                                        <th>Department</th>
+                                        <th>Teacher</th>
+                                        <th>School</th>
+                                        <th>Detail</th>
+                                        <th>Image</th>
+                                        <th>Files</th>
+                                        <th>Image Gallery</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </tr>
 
-                                                        </thead>
-                                                        <tbody>
-                                                        @foreach($datalist as $rs)
-                                                            <tr>
-                                                                <td>{{$rs -> id}}</td>
-                                                                <td>
-                                                                    {{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs->category, $rs->category->title)}}
-                                                                </td>
-                                                                <td>{{$rs -> title}} </td>
-                                                                <td>{{$rs -> keywords}} </td>
-                                                                <td>{{$rs -> description}}</td>
-                                                                <td>{{$rs -> status}} </td>
-                                                                <td>{{$rs -> slug}} </td>
-                                                                <td>{{$rs -> lectures}} </td>
-                                                                <td>{{$rs -> subject}} </td>
-                                                                <td>{{$rs -> grade}} </td>
-                                                                <td>{{$rs -> department}} </td>
-                                                                <td>{{$rs -> teacher}} </td>
-                                                                <td>{{$rs -> school}} </td>
-                                                                <td>{{$rs -> detail}} </td>
-                                                                <td>
-                                                                    @if ($rs->image)
-                                                                        <img src="{{Storage::url($rs->image)}}"
-                                                                             height="30"
-                                                                             alt="">
-                                                                    @endif
-                                                                </td>
-                                                                <td>
-                                                                    @if ($rs->files)
-                                                                        <img src="{{Storage::url($rs->files)}}"
-                                                                             height="30"
-                                                                             alt="">
-                                                                    @endif
-                                                                </td>
-                                                                <td>
-                                                                    <a href="{{route('user_image_add',['product_id'=> $rs->id])}}"
-                                                                       onclick="return window.open(this.href, '','top=50 left=100 width=1100,height=700')">
-                                                                        <img
-                                                                            src="{{asset('assets/admin/images')}}/gallery-3.png"
-                                                                            height="25"> </a></td>
-                                                                <td>
-                                                                    <a href="{{route('user_product_edit',['id'=> $rs->id])}}"
-                                                                       onclick=""> <img
-                                                                            src="{{asset('assets/admin/images')}}/edit.png"
-                                                                            height="25"> </a>
-                                                                </td>
-                                                                <td>
-                                                                    <a href="{{route('user_product_delete', ['id'=> $rs->id])}}"
-                                                                       onclick="return confirm('Delete! Are you sure ?')">
-                                                                        <img
-                                                                            src="{{asset('assets/admin/images')}}/delete.jpg"
-                                                                            height="25"> </a>
-                                                                </td>
-                                                            </tr>
-                                                        @endforeach
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($datalist as $rs)
+                                        <tr>
+                                            <td>{{$rs -> id}}</td>
+                                            <td>
+                                                {{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs->category, $rs->category->title)}}
+                                            </td>
+                                            <td>{{$rs -> title}} </td>
+                                            <td>{{$rs -> keywords}} </td>
+                                            <td>{{$rs -> description}}</td>
+                                            <td>{{$rs -> status}} </td>
+                                            <td>{{$rs -> slug}} </td>
+                                            <td>{{$rs -> lectures}} </td>
+                                            <td>{{$rs -> subject}} </td>
+                                            <td>{{$rs -> grade}} </td>
+                                            <td>{{$rs -> department}} </td>
+                                            <td>{{$rs -> teacher}} </td>
+                                            <td>{{$rs -> school}} </td>
+                                            <td>{{$rs -> detail}} </td>
+                                            <td>
+                                                @if ($rs->image)
+                                                    <img src="{{Storage::url($rs->image)}}"
+                                                         height="30"
+                                                         alt="">
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if ($rs->files)
+                                                    <img src="{{Storage::url($rs->files)}}"
+                                                         height="30"
+                                                         alt="">
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <a href="{{route('user_image_add',['product_id'=> $rs->id])}}"
+                                                   onclick="return window.open(this.href, '','top=50 left=100 width=1100,height=700')">
+                                                    <img
+                                                        src="{{asset('assets/admin/images')}}/gallery-3.png"
+                                                        height="25"> </a></td>
+                                            <td>
+                                                <a href="{{route('user_product_edit',['id'=> $rs->id])}}"
+                                                   onclick=""> <img
+                                                        src="{{asset('assets/admin/images')}}/edit.png"
+                                                        height="25"> </a>
+                                            </td>
+                                            <td>
+                                                <a href="{{route('user_product_delete', ['id'=> $rs->id])}}"
+                                                   onclick="return confirm('Delete! Are you sure ?')">
+                                                    <img
+                                                        src="{{asset('assets/admin/images')}}/delete.jpg"
+                                                        height="25"> </a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    </div>
+    </div>
+    </div>
     </div>
 </section>
 

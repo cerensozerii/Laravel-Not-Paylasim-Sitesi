@@ -36,7 +36,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="aa-error-area">
-                    <li><h2>User Profile</h2></li>
+                    <a href="{{route('homepage')}}">Home</a>
                     <li>User Profile</li>
                 </div>
             </div>
